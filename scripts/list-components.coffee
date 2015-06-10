@@ -8,5 +8,5 @@ module.exports = (robot) ->
             .get() (error, response, body) ->
                 repoNames = body.map (repo) -> repo.full_name
                 repoNames = repoNames.join ', '
-                res.send body
+                res.send repoNames
 
