@@ -7,8 +7,7 @@ module.exports = (robot) ->
             # and makes an http get call
             .get() (error, response, body) ->
                 # passes back the complete reponse
-                repoNames = body.map (repo) -> repo.full_name
-                res.send repoNames.join ', '
+                res.send body
 
     robot.hear /test/i, (res) ->
         res.send "TESTINGS!"
