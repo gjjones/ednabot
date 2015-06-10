@@ -9,3 +9,6 @@ module.exports = (robot) ->
                 # passes back the complete reponse
                 repoNames = body.map (repo) -> repo.full_name
                 msg.send repoNames.join ', '
+
+    robot.hear /test/i, (res) ->
+        res.send "TESTINGS!"
