@@ -6,7 +6,5 @@ module.exports = (robot) ->
         res.http('https://api.github.com/users/ebsco/repos')
             # and makes an http get call
             .get() (error, response, body) ->
-                repoNames = body.map (repo) -> repo.full_name
-                repoNames = repoNames.join ', '
-                res.send repoNames
+                res.send (repo.full_name for repo in body)
 
